@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.container {
+    max-width: 500px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height: 300px;
+    border: 1px solid steelblue;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+}
+
+.btn-block:hover {
+    color: #fff;
+    background: #000;
+}
+
+.task {
+    background: #f4f4f4;
+    margin: 5px 5px 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+
+.task:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: -5px;
+    top: 0;
+    background-color: green;
+    transition: 0.2s ease;
+}
+
+.task.reminder::after {
+    left: 0;
+}
+
+.task h3,
+.task .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-form {
+    width: 100%;
+    height: 0;
+    overflow-y: hidden;
+    overflow-x: visible;
+    transition: 0.2s ease;
+}
+
+.add-form.open {
+    margin-bottom: 40px;
+    height: 303px;
+}
+
+.form-control {
+    margin: 20px 0;
+}
+
+.form-control label {
+    display: block;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    margin: 5px 0;
+    padding: 3px 7px;
+    font-size: 17px;
+}
+
+.task input {
+    border: 1px solid #f4f4f4;
+    background-color: #f4f4f4;
+    transition: 0.2s ease;
+}
+
+.task input:focus,
+.task input:hover {
+    outline: none;
+    border: 1px solid #b4b4b4;
+    border-radius: 5px;
+}
+
+input.task-name {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.form-control-check {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-control-check label {
+    flex: 1;
+}
+
+.form-control-check input {
+    flex: 2;
+    height: 20px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+a:hover {
+    transition: 0.2s ease;
+    transform: scale(1.02);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.icon:hover {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+.notify path {
+    stroke: green;
+}
+
+.notification-wrapper {
+    width: 50vw;
+    background: #b4b4b4;
+    color: #fff;
+    padding: 20px 10px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    bottom: -300px;
+    background: green;
+}
+
+.notification-wrapper#show{
+  animation: notification 2s ease-in-out;
+}
+
+.white-icon polygon{
+  stroke: #fff;
+  fill: #fff;
+}
+
+.white-icon{
+  margin-right: 10px;
+}
+
+@keyframes notification {
+    0% {
+        bottom: -300px;
+    }
+    20% {
+        bottom: 50px;
+    }
+    80% {
+        bottom: 50px;
+    }
+    100% {
+        bottom: -300px;
+    }
+}
